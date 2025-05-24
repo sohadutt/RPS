@@ -34,7 +34,6 @@ function botPlay(bot) {
 function playerPlay(player) {
     let playerChoice = prompt("Enter Rock, Paper, or Scissors: ");
     playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    
     if (playerChoice !== rock && playerChoice !== paper && playerChoice !== scissor) {
         error.log("Please try again.");
         return playerPlay(player);
