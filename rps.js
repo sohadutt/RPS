@@ -43,7 +43,7 @@ function playerPlay(player) {
     return playerChoice;
 }
 
-function playGame() {
+function gamePlay() {
     let bot = botPlay();
     let player = playerPlay();
     let result = gameLogic(bot, player);
@@ -63,7 +63,7 @@ function playGame() {
 function rounds() {
     for (let i = 1; i <= 5; i++) {
         console.log(`Round ${i}:`);
-        playGame();
+        gamePlay();
     }
       console.log(`Player: ${playerScore}`);
       console.log(`Bot: ${botScore}`);
