@@ -21,7 +21,7 @@ function gameLogic(bot, player) {
 }
 
 function botPlay() {
-    let botChoice = Math.floor(Math.random() * 3) + 1;
+    let botChoice = Math.floor(Math.random() * 3) + 1; // Generates a random number between 1 and 3 and it doesn't really need the +1 parameter.
     if (botChoice === 1) {
         return rock;
     } else if (botChoice === 2) {
@@ -57,8 +57,8 @@ function gamePlay() {
     console.log(`Scores => Player: ${playerScore} | Bot: ${botScore}`);
 }
 
-function rounds() {
-    for (let i = 1; i <= 5; i++) {
+function rounds(rounds) {
+    for (let i = 1; i <= rounds; i++) {
         console.log(`Round ${i}:`);
         gamePlay();
     }
@@ -76,4 +76,4 @@ function rounds() {
     }
 }
 
-rounds()
+rounds(5); // You can change the number of rounds here
