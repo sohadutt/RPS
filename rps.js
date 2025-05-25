@@ -69,7 +69,7 @@ function rounds() {
         console.log("Congratulations! You Win!");
     }
         else if (playerScore < botScore) {
-        console.log("You Lose!");
+        console.log("Game Over! You Lose!");
     }
     else {
         console.log("It's a tie!");
