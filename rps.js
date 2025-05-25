@@ -55,7 +55,6 @@ function gamePlay() {
     } else if (result === loss) {
         botScore++;
     }
-
     console.log(`Scores => Player: ${playerScore} | Bot: ${botScore}`);
 }
 
@@ -64,8 +63,8 @@ function rounds() {
         console.log(`Round ${i}:`);
         gamePlay();
     }
-      console.log(`Player: ${playerScore}`);
-      console.log(`Bot: ${botScore}`);
+ 
+    console.log(`Final Scores => Player: ${playerScore} | Bot: ${botScore}`);
 }
 
 rounds()
