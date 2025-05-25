@@ -20,7 +20,7 @@ function gameLogic(bot, player) {
     }
 }
 
-function botPlay(bot) {
+function botPlay() {
     let botChoice = Math.floor(Math.random() * 3) + 1;
     if (botChoice === 1) {
         return rock;
@@ -31,14 +31,13 @@ function botPlay(bot) {
     }
 }
 
-function playerPlay(player) {
+function playerPlay() {
     let playerChoice = prompt("Enter Rock, Paper, or Scissors: ");
     playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
     if (playerChoice !== rock && playerChoice !== paper && playerChoice !== scissor) {
         error.log("Please try again.");
-        return playerPlay(player);
+        return playerPlay();
     }
-    
     return playerChoice;
 }
 
@@ -65,6 +64,16 @@ function rounds() {
     }
  
     console.log(`Final Scores => Player: ${playerScore} | Bot: ${botScore}`);
+
+    if (playerScore > botScore) {
+        console.log("Congratulations! You Win!");
+    }
+        else if (playerScore < botScore) {
+        console.log("You Lose!");
+    }
+    else {
+        console.log("It's a tie!");
+    }
 }
 
 rounds()
