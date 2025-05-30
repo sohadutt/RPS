@@ -35,7 +35,7 @@ function playerPlay() {
     let playerChoice = prompt("Enter Rock, Paper, or Scissors: ");
     playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
     if (playerChoice !== rock && playerChoice !== paper && playerChoice !== scissor) {
-        error.log("Please try again.");
+        console.log("Please try again.");
         return playerPlay();
     }
     return playerChoice;
