@@ -49,14 +49,17 @@ function gamePlay(playerChoice) {
 }
 
 // Ui 
+document.addEventListener("DOMContentLoaded", () => {
 const result = document.querySelector(".display");
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorBtn = document.getElementById("scissors");
 
+
 rockBtn.addEventListener("click", () => handleClick(rock));
 paperBtn.addEventListener("click", () => handleClick(paper));
 scissorBtn.addEventListener("click", () => handleClick(scissor));
+});
 
 function handleClick(playerChoice) {
     gamePlay(playerChoice);
