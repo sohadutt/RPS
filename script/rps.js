@@ -22,7 +22,7 @@ function gameLogic(bot, player) {
 }
 
 function botPlay() {
-    let botChoice = Math.floor(Math.random() * 3) + 1; // Generates a random number between 1 and 3 and it doesn't really need the +1 parameter.
+    let botChoice = Math.floor(Math.random() * 3) + 1;
     if (botChoice === 1) {
         return rock;
     } else if (botChoice === 2) {
@@ -32,14 +32,9 @@ function botPlay() {
     }
 }
 
-function playerPlay() {
-    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    return playerChoice;
-}
-
-function gamePlay() {
+function gamePlay(playerChoice) {
     let bot = botPlay();
-    let player = playerPlay(playerChoice);
+    let player = playerChoice;
     let result = gameLogic(bot, player);
     console.log(`Bot chose: ${bot}`);
     console.log(`You chose: ${player}`);
@@ -53,26 +48,16 @@ function gamePlay() {
     result.textContent += (`Scores => Player: ${playerScore} | Bot: ${botScore}`);
 }
 
-function rounds(rounds) {
-    for (let i = 1; i <= rounds; i++) {
-        console.log(`Round ${i}:`);
-        gamePlay();
-    }
- 
-    console.log(`Final Scores => Player: ${playerScore} | Bot: ${botScore}`);
+// Ui 
+const result = document.querySelector(".display");
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorBtn = document.getElementById("scissors");
 
-    if (playerScore > botScore) {
-        result.textContent +=("Congratulations! You Win!");
-    }
-        else if (playerScore < botScore) {
-        result.textContent +=("Game Over! You Lose!");
-    }
-    else {
-        result.textContent +=("It's a tie!");
-    }
+rockBtn.addEventListener("click", () => handleClick(rock));
+paperBtn.addEventListener("click", () => handleClick(paper));
+scissorBtn.addEventListener("click", () => handleClick(scissor));
+
+function handleClick(playerChoice) {
+    gamePlay(playerChoice);
 }
-window.onload = function () {
-document.getElementById("rock").addEventListener("click", handleClick);
-document.getElementById("paper").addEventListener("click", handleClick);
-document.getElementById("scissors").addEventListener("click", handleClick);
-};
