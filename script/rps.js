@@ -7,6 +7,7 @@ let rock = "Rock";
 let paper = "Paper";
 let scissor = "Scissors";
 
+
 function gameLogic(bot, player) {
     if (bot === player) {
         return tie;
@@ -32,18 +33,13 @@ function botPlay() {
 }
 
 function playerPlay() {
-    let playerChoice = prompt("Enter Rock, Paper, or Scissors: ");
     playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    if (playerChoice !== rock && playerChoice !== paper && playerChoice !== scissor) {
-        console.log("Please try again.");
-        return playerPlay();
-    }
     return playerChoice;
 }
 
 function gamePlay() {
     let bot = botPlay();
-    let player = playerPlay();
+    let player = playerPlay(playerChoice);
     let result = gameLogic(bot, player);
     console.log(`Bot chose: ${bot}`);
     console.log(`You chose: ${player}`);
@@ -54,7 +50,7 @@ function gamePlay() {
     } else if (result === loss) {
         botScore++;
     }
-    console.log(`Scores => Player: ${playerScore} | Bot: ${botScore}`);
+    result.textContent += (`Scores => Player: ${playerScore} | Bot: ${botScore}`);
 }
 
 function rounds(rounds) {
@@ -66,16 +62,17 @@ function rounds(rounds) {
     console.log(`Final Scores => Player: ${playerScore} | Bot: ${botScore}`);
 
     if (playerScore > botScore) {
-        console.log("Congratulations! You Win!");
+        result.textContent +=("Congratulations! You Win!");
     }
         else if (playerScore < botScore) {
-        console.log("Game Over! You Lose!");
+        result.textContent +=("Game Over! You Lose!");
     }
     else {
-        console.log("It's a tie!");
+        result.textContent +=("It's a tie!");
     }
 }
-
-const input = document.querySelector("#input");
-
-
+window.onload = function () {
+document.getElementById("rock").addEventListener("click", handleClick);
+document.getElementById("paper").addEventListener("click", handleClick);
+document.getElementById("scissors").addEventListener("click", handleClick);
+};
