@@ -76,4 +76,6 @@ function rounds(rounds) {
     }
 }
 
-rounds(5); // You can change the number of rounds here
+const input = document.querySelector("#input");
+
+
