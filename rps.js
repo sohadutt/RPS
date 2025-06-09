@@ -3,9 +3,9 @@ let win = "You win!";
 let loss = "You lose!";
 let botScore = 0;
 let playerScore = 0;
-let rock = "Rock"
-let paper = "Paper"
-let scissor = "Scissors"
+let rock = "Rock";
+let paper = "Paper";
+let scissor = "Scissors";
 
 function gameLogic(bot, player) {
     if (bot === player) {
