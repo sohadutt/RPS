@@ -6,7 +6,11 @@ let playerScore = 0;
 let rock = "Rock";
 let paper = "Paper";
 let scissor = "Scissors";
-
+const emojiMap = {
+  rock: "🪨",
+  paper: "📄",
+  scissors: "✂️"
+};
 
 function gameLogic(bot, player) {
     if (bot === player) {
@@ -33,6 +37,10 @@ function botPlay() {
 }
 
 function gamePlay(playerChoice) {
+    const resultDiv = document.querySelector('.result');
+    const scoreDiv = document.querySelector('.score');
+    const botChoiceDiv = document.querySelector('.bot-choice');
+    const playerChoiceDiv = document.querySelector('.player-choice');
     let bot = botPlay();
     let player = playerChoice;
     let result = gameLogic(bot, player);
@@ -45,12 +53,15 @@ function gamePlay(playerChoice) {
     } else if (result === loss) {
         botScore++;
     }
-    result.textContent += (`Scores => Player: ${playerScore} | Bot: ${botScore}`);
+    scoreDiv.innerHTML = `Player Score: ${playerScore} - Bot Score: ${botScore}`;
+    botChoiceDiv.innerHTML = `Bot chose:  ${emojiMap[bot.toLowerCase()]}`;
+    playerChoiceDiv.innerHTML = `You chose: ${emojiMap[player.toLowerCase()]}`;
+    resultDiv.innerHTML = result;
 }
 
 // Ui 
 document.addEventListener("DOMContentLoaded", () => {
-const result = document.querySelector(".display");
+
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorBtn = document.getElementById("scissors");
