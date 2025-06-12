@@ -54,9 +54,18 @@ function gamePlay(playerChoice) {
         botScore++;
     }
     scoreDiv.innerHTML = `Player Score: ${playerScore} - Bot Score: ${botScore}`;
-    botChoiceDiv.innerHTML = `Bot chose:  ${emojiMap[bot.toLowerCase()]}`;
-    playerChoiceDiv.innerHTML = `You chose: ${emojiMap[player.toLowerCase()]}`;
+    botChoiceDiv.innerHTML = `${emojiMap[bot.toLowerCase()]}`;
+    playerChoiceDiv.innerHTML = `${emojiMap[player.toLowerCase()]}`;
     resultDiv.innerHTML = result;
+    
+    if (playerScore === 5 || botScore === 5) {
+        if (playerScore > botScore) {
+            resultDiv.innerHTML = "Congratulations! You are the champion!";
+        } else {
+            resultDiv.innerHTML = "Sorry, the bot is the champion!";
+        }
+        return endmodal();
+    }
 }
 
 // Ui 
@@ -67,6 +76,7 @@ const paperBtn = document.getElementById("paper");
 const scissorBtn = document.getElementById("scissors");
 
 
+
 rockBtn.addEventListener("click", () => handleClick(rock));
 paperBtn.addEventListener("click", () => handleClick(paper));
 scissorBtn.addEventListener("click", () => handleClick(scissor));
@@ -74,4 +84,27 @@ scissorBtn.addEventListener("click", () => handleClick(scissor));
 
 function handleClick(playerChoice) {
     gamePlay(playerChoice);
+}
+
+function endmodal() {
+    const modal = document.getElementById("endModal");
+    modal.style.display = "block";
+    const closeBtn = document.querySelector(".close");
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+        resetGame();
+    };
+}
+function resetGame() {
+    playerScore = 0;
+    botScore = 0;
+    const scoreDiv = document.querySelector('.score');
+    const resultDiv = document.querySelector('.result');
+    const botChoiceDiv = document.querySelector('.bot-choice');
+    const playerChoiceDiv = document.querySelector('.player-choice');
+    
+    scoreDiv.innerHTML = `Player Score: ${playerScore} - Bot Score: ${botScore}`;
+    resultDiv.innerHTML = "";
+    botChoiceDiv.innerHTML = "";
+    playerChoiceDiv.innerHTML = "";
 }
