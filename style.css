@@ -1,3 +1,23 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #f1f1f1;
+  --text-color: #333;
+  --text-color2: #fff;
+  --border-color: white;
+  --button-color: #008CBA;
+  --button-hover-color: #005f73;
+}
+
+.darkmode {
+  --primary-color: #333;
+  --secondary-color: #555;
+  --text-color: #f1f1f1;
+  --text-color2: #000;
+  --border-color: #888;
+  --button-color: #4CAF50;
+  --button-hover-color: #45a049;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -75,4 +95,24 @@ body {
   float: right;
   font-size: 28px;
   border-radius: 10px;
+}
+
+.header {
+  font-size: 24px;
+  text-align: center;
+  padding: 30px;
+  background-color: aquamarine;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+  ;
+}
+
+.header.button:hover {
+  background-color: darkcyan;
 }

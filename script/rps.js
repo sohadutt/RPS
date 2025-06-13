@@ -108,3 +108,5 @@ function resetGame() {
     botChoiceDiv.innerHTML = "";
     playerChoiceDiv.innerHTML = "";
 }
+
+
