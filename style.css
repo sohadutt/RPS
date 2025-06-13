@@ -45,12 +45,6 @@ body {
   text-align: center;
 
 }
-.button {
-  width: 100px;
-  height: 50px;
-  font-size: 24px;
-  margin: 10px;
-}
 
 .choice {
   width: 200px;
@@ -76,6 +70,7 @@ body {
   left: 0; top: 0;
   width: 100%; height: 100%;
   background-color: rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .modal-content {
@@ -85,16 +80,22 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 30%;
 }
 
 .close {
-  background-color: blue;
-  margin: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  float: right;
-  font-size: 28px;
-  border-radius: 10px;
+    background-color: #3B82F6;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0px;
+    flex-shrink: 0;
 }
 
 .header {
@@ -115,4 +116,12 @@ body {
 
 .header.button:hover {
   background-color: darkcyan;
+}
+
+button {
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
