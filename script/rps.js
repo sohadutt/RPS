@@ -41,6 +41,7 @@ function gamePlay(playerChoice) {
     const scoreDiv = document.querySelector('.score');
     const botChoiceDiv = document.querySelector('.bot-choice');
     const playerChoiceDiv = document.querySelector('.player-choice');
+    const resulthead = document.querySelector('.result-head');
     let bot = botPlay();
     let player = playerChoice;
     let result = gameLogic(bot, player);
@@ -50,13 +51,16 @@ function gamePlay(playerChoice) {
 
     if (result === win) {
         playerScore++;
+        resulthead.innerHTML = "You Win!";
     } else if (result === loss) {
         botScore++;
+        resulthead.innerHTML = "You Lose!";
     }
     scoreDiv.innerHTML = `Player Score: ${playerScore} - Bot Score: ${botScore}`;
     botChoiceDiv.innerHTML = `${emojiMap[bot.toLowerCase()]}`;
     playerChoiceDiv.innerHTML = `${emojiMap[player.toLowerCase()]}`;
     resultDiv.innerHTML = result;
+
     
     if (playerScore === 5 || botScore === 5) {
         if (playerScore > botScore) {
@@ -88,7 +92,7 @@ function handleClick(playerChoice) {
 
 function endmodal() {
     const modal = document.getElementById("endModal");
-    modal.style.display = "block";
+    modal.style.display = "flex";
     const closeBtn = document.querySelector(".close");
     closeBtn.onclick = function() {
         modal.style.display = "none";

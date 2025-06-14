@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors!!!</title>
+    <link rel="icon" href="./img/icon.ico" type="image/icon" />
     <link rel="stylesheet" href="style.css"/>
     <script src="./script/rps.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=brightness_4" />
 </head>
 <body>
     <button class="toggle-theme" id="toggle-theme">
-        <span class="material-symbols-outlined">
-            brightness_4
-            </span>
-            </button>
+        <span class="material-symbols-outlined">brightness_4</span>
+    </button>
     <header class="header">
         <h1>Rock, Paper, Scissors!!!</h1>
     </header>
-    
     <div class="game">
-        <p>Choose your weapon!</p>
-        <div class="display">
-            <div class="score"></div>
-            <div class="choice">
-                <div class="bot-choice"></div>
-                <div class="player-choice"></div>
+        <div class="main">
+            <div class="game-text">
+                <div class="display">
+                    <div class="result-head"></div>
+                    <div class="score"></div>
+                    <div class="choice">
+                        <div class="computer">
+                        <div class="bot-choice">
+                        </div>
+                        <p>Computer</p>
+                        </div>
+                        <div class="player">
+                        <div class="player-choice">
+                        </div>
+                        <p>You</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="input">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <div class="input">
+                <button id="rock">🪨</button>
+                <button id="paper">📄</button>
+                <button id="scissors">✂️</button>
+            </div>
         </div>
         <div id="endModal" class="modal">
             <div class="modal-content">
