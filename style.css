@@ -1,21 +1,37 @@
 :root {
-  --primary-color: #4CAF50;
-  --secondary-color: #f1f1f1;
-  --text-color: #333;
-  --text-color2: #fff;
-  --border-color: white;
-  --button-color: #008CBA;
-  --button-hover-color: #005f73;
+  --primary-color: #eee;
+  --primary-dark: #98a7ba;
+  --button-hover: #7b828d;
+  --button-active: #5b5f68;
+  --header-text: #fac650;
 }
 
 .darkmode {
-  --primary-color: #333;
-  --secondary-color: #555;
-  --text-color: #f1f1f1;
-  --text-color2: #000;
-  --border-color: #888;
-  --button-color: #4CAF50;
-  --button-hover-color: #45a049;
+  --primary-color: #505266;
+  --primary-dark: #17202b;
+  --button-hover: #50565f;
+  --button-active: #292b30;
+  --header-text: #fac650;
+}
+
+.toggle-theme {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-dark);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.darkmode span {
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -28,7 +44,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: grey;
+  background-color: var(--primary-color);
   flex-grow: 1;
 }
 .display {
@@ -74,7 +90,7 @@ body {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: var(--primary-color);
   border-radius: 20px;
   margin: auto;
   padding: 20px;
@@ -87,7 +103,7 @@ body {
 }
 
 .close {
-    background-color: #3B82F6;
+    background-color: var(--header-text);
     color: white;
     border: 2px solid white;
     padding: 10px 20px;
@@ -102,20 +118,11 @@ body {
   font-size: 24px;
   text-align: center;
   padding: 30px;
-  background-color: aquamarine;
+  background-color: var(--primary-dark);
+  color: var(--header-text);
   font-family: 'Roboto';
-}
-
-.header.button {
-  background-color: transparent;
   border: none;
-  cursor: pointer;
-  color: black;
-  ;
-}
-
-.header.button:hover {
-  background-color: darkcyan;
+  margin: 0px;
 }
 
 button {
@@ -124,4 +131,28 @@ button {
 
 button:hover {
   transform: scale(1.05);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--header-text);
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  margin: 0;
+  padding : 20px;
+}
+
+.github-logo {
+  width: 30px;
+  height: 30px;
 }
