@@ -1,4 +1,4 @@
-# Basic Rock paper scissors game
+# Basic Rock Paper Scissors game
 <br/>
 
 ### Link Preview
