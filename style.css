@@ -57,6 +57,9 @@ body {
   font-weight: bold;
   letter-spacing: 1px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .main {
@@ -217,3 +220,7 @@ footer {
     padding: 20px;
   }
 }
+.glow {
+    text-shadow: 0 0 5px #fff, 0 0 20px rgb(211, 167, 56), 0 0 10px rgb(255, 213, 0);
+    transition: text-shadow 0.3s ease-in-out;
+  }

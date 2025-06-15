@@ -20,3 +20,16 @@ themeSwitch.addEventListener('click', () => {
     darkmode !== "true" ? enableDarkMode() : disableDarkMode()
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+    const headers = document.querySelectorAll(".glow-target");
+
+    function glowLoop(index = 0) {
+  headers[index].classList.add("glow");
+
+  setTimeout(() => {
+    headers[index].classList.remove("glow");
+    glowLoop((index + 1) % headers.length); 
+  }, 1000);
+}
+    glowLoop();
+  });
